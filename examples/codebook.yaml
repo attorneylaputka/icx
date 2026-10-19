@@ -1,0 +1,51 @@
+# Example ICX codebook for a generic agent fleet. Replace owners and codes with your own.
+icx:
+  version: 1.0.0
+  classes:
+    - {code: org, name: "fleet, agents, rules, protocol", owner: chief-of-staff}
+    - {code: pr,  name: client products, owner: product-lead}
+    - {code: sys, name: infrastructure and platforms, owner: platform}
+    - {code: ops, name: process and delivery, owner: operations}
+    - {code: mk,  name: marketing and growth, owner: marketing}
+    - {code: fin, name: money, owner: operations}
+    - {code: lg,  name: legal and compliance, owner: chief-of-staff}
+    - {code: rs,  name: research and intel, owner: engineering}
+    - {code: dt,  name: data and reporting, owner: engineering}
+    - {code: x,   name: "unclassed, reclassify within 7 days", owner: editor}
+  codes:
+    - {code: org.proto, name: communication protocol}
+    - {code: org.rule, name: standing rules}
+    - {code: org.agent, name: agent roster}
+    - {code: pr.voice, name: AI voice}
+    - {code: pr.voice.intake, name: inbound intake}
+    - {code: pr.voice.book, name: appointment booking}
+    - {code: pr.voice.out, name: outbound calling}
+    - {code: pr.voice.recap, name: post-call summary}
+    - {code: pr.sms, name: texting}
+    - {code: pr.web, name: websites}
+    - {code: sys.wkr, name: serverless workers}
+    - {code: sys.db, name: databases}
+    - {code: sys.crm, name: CRM platform}
+    - {code: sys.alert, name: monitoring and alerts}
+    - {code: ops.deploy, name: deploys and releases}
+    - {code: ops.qc, name: QC and verification}
+    - {code: ops.ticket, name: ticket tracking}
+    - {code: mk.cont, name: content}
+    - {code: mk.out, name: outbound prospecting}
+    - {code: fin.inv, name: invoicing}
+    - {code: fin.spend, name: vendor and model spend}
+    - {code: lg.tcpa, name: contact-time rules}
+    - {code: rs.eval, name: tool and model evaluations}
+    - {code: dt.kpi, name: KPIs}
+    - {code: dt.dash, name: dashboards}
+  facets:
+    - {code: cfg, name: config}
+    - {code: err, name: incident or bug}
+    - {code: doc, name: documentation}
+    - {code: test, name: test or QC}
+    - {code: cost, name: spend}
+    - {code: plan, name: plan or design}
+    - {code: st.*, name: "US state jurisdiction, e.g. st.pa"}
+    - {code: v.*, name: "version, e.g. v.2"}
+  tombstones:
+    - {old: pr.voice.recv, new: pr.voice.intake}

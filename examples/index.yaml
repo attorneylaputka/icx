@@ -1,0 +1,28 @@
+# Example relative index: plain-English term -> ICX code.
+index:
+  intake: pr.voice.intake
+  receptionist: pr.voice.intake
+  booking: pr.voice.book
+  appointment: pr.voice.book
+  dialer: pr.voice.out
+  call summary: pr.voice.recap
+  text message: pr.sms
+  website: pr.web
+  worker: sys.wkr
+  database: sys.db
+  crm: sys.crm
+  alert: sys.alert
+  deploy: ops.deploy
+  release: ops.deploy
+  qc: ops.qc
+  ticket: ops.ticket
+  blog: mk.cont
+  cold outreach: mk.out
+  invoice: fin.inv
+  api cost: fin.spend
+  quiet hours: lg.tcpa
+  model eval: rs.eval
+  kpi: dt.kpi
+  dashboard: dt.dash
+  intake config: pr.voice.intake~cfg
+  pennsylvania intake rules: pr.voice.intake~st.pa
