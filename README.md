@@ -12,6 +12,9 @@ pr.voice.intake~cfg
 └─ class: client products
 ```
 
+## Part of ICOM
+ICX is the object vocabulary for [ICOM](https://github.com/rstan251/icom-standard), the open bot-to-bot communication standard. ICOM defines how agents talk (router, header, verbs, priorities); ICX defines what they talk about. ICOM's Rule 14 makes the header `object` slot an ICX code.
+
 ## How it maps to Dewey
 
 | Dewey Decimal | ICX |
@@ -37,14 +40,14 @@ pr.voice.intake~cfg
 7. Unknown concept: send it as `x.<word>`. The editor places it in the tree on the next review.
 8. One editor (a person or a single designated agent) owns the codebook and index.
 
-## Example message
+## Example message (ICOM header)
 
 Plain English:
 > Please change the inbound intake configuration for client ACME; the next step is the platform owner reviewing the worker.
 
 With ICX as the object:
 ```
-@ENG>OPS P1 ACME #T-1182 ASK pr.voice.intake~cfg nx=PLATFORM:sys.wkr
+@ENG>ICOM>OPS P1 ACME #T-1182 ASK pr.voice.intake~cfg nx=PLATFORM:sys.wkr
 ```
 
 ICX is about precision and routing, not compression. Word segments cost about the same tokens as numbers (`voice.intake.book` is 4 tokens and `2.31.4` is 5 in `o200k_base`), and words can be read without opening the codebook.
