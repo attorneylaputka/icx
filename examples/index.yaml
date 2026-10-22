@@ -1,28 +1,189 @@
-# Example relative index: plain-English term -> ICX code.
+# Laputka Law Office relative index. Plain-English term -> ICX code.
+# Clients, matters, companies, and exact values are not entries.
 index:
-  intake: pr.voice.intake
-  receptionist: pr.voice.intake
-  booking: pr.voice.book
-  appointment: pr.voice.book
-  dialer: pr.voice.out
-  call summary: pr.voice.recap
-  text message: pr.sms
-  website: pr.web
-  worker: sys.wkr
-  database: sys.db
+  # Assistants, rules, codebook
+  chief of staff: org.agent.mariag
+  maria g: org.agent.mariag
+  codebook: org.codebk
+  codebook editor: org.agent.icom
+  codebook approver: org.agent.mariag
+  icom: org.agent.icom
+  protocol: org.proto
+  standing rule: org.rule
+  approval rule: org.rule.apprv
+  payment rule: org.rule.apprv
+  assistant: org.agent
+  roster: org.agent
+  jen: org.agent.jen
+  gauntlet: org.agent.gaunt
+  inbox puller: org.agent.poll
+  cto: org.agent.cto
+  teams bot: org.agent.teams
+  cfo: org.agent.cfo
+  comptroller: org.agent.cfo
+  clap: org.agent.cfo.clap
+  cill: org.agent.cfo.cill
+  cclr: org.agent.cfo.cclr
+  cwat: org.agent.cfo.cwat
+  cmon: org.agent.cfo.cmon
+  cpre: org.agent.cfo.cpre
+  cbig: org.agent.cfo.cbig
+  cfun: org.agent.cfo.cfun
+  cwes: org.agent.cfo.cwes
+  travel agent: org.agent.trav
+  flight bot: org.agent.trav.flt
+  hotel bot: org.agent.trav.htl
+  rental car bot: org.agent.trav.car
+  restaurant bot: org.agent.trav.rest
+  travel review bot: org.agent.trav.trv
+
+  # Client services
+  intake: pr.intake
+  client intake: pr.intake
+  consultation: pr.cnslt
+  consult: pr.cnslt
+  client consultation: pr.cnslt
+  appointment: pr.appt
+  appointments: pr.appt
+  booking: pr.appt.book
+  book appointment: pr.appt.book
+  reschedule: pr.appt.rebook
+  reschedule appointment: pr.appt.rebook
+  cancellation: pr.appt.cancel
+  cancel appointment: pr.appt.cancel
+
+  # Cogent (GoHighLevel) CRM
+  cogent: sys.crm
+  gohighlevel: sys.crm
+  go high level: sys.crm
+  ghl: sys.crm
   crm: sys.crm
-  alert: sys.alert
-  deploy: ops.deploy
-  release: ops.deploy
-  qc: ops.qc
+  lead: sys.crm.lead
+  leads: sys.crm.lead
+  texting: sys.crm.sms
+  text message: sys.crm.sms
+  sms: sys.crm.sms
+  reminder: sys.crm.remind
+  reminders: sys.crm.remind
+  crm reminder: sys.crm.remind
+  crm reporting: sys.crm.report
+  cogent report: sys.crm.report
+
+  # Email, calendar, Teams, IT
+  email: sys.mail
+  outlook: sys.mail
+  inbox: sys.mail.inbox
+  email triage: sys.mail.triage
+  triage: sys.mail.triage
+  email draft: sys.mail.draft
+  draft email: sys.mail.draft
+  calendar: sys.cal
+  scheduling: sys.cal.sched
+  schedule: sys.cal.sched
+  teams: sys.teams
+  microsoft teams: sys.teams
+  teams question: sys.teams.ask
+  it support: sys.it
+  tech support: sys.it
+  account access: sys.it.access
+  login: sys.it.access
+  iron docket: sys.docket
+
+  # Tickets, review, travel
   ticket: ops.ticket
-  blog: mk.cont
-  cold outreach: mk.out
-  invoice: fin.inv
-  api cost: fin.spend
-  quiet hours: lg.tcpa
-  model eval: rs.eval
-  kpi: dt.kpi
+  task ticket: ops.ticket
+  docket ticket: ops.ticket
+  ticket created: ops.ticket.new
+  new ticket: ops.ticket.new
+  ticket due: ops.ticket.due
+  ticket blocked: ops.ticket.block
+  blocked ticket: ops.ticket.block
+  ticket review: ops.ticket.review
+  ticket done: ops.ticket.done
+  completed ticket: ops.ticket.done
+  qc: ops.qc
+  accuracy review: ops.qc
+  completeness review: ops.qc
+  travel: ops.trav
+  flight: ops.trav.flt
+  flights: ops.trav.flt
+  hotel: ops.trav.htl
+  hotels: ops.trav.htl
+  rental car: ops.trav.car
+  car rental: ops.trav.car
+  restaurant: ops.trav.rest
+  travel review: ops.trav.revw
+
+  # Marketing
+  marketing: mk
+  content: mk.cont
+  campaign: mk.camp
+  campaigns: mk.camp
+
+  # Finance. Company identity is a message field, not a code.
+  bookkeeping: fin.book
+  payables: fin.paybl
+  accounts payable: fin.paybl
+  payment approval: fin.paybl.apprv
+  attorney approval: fin.paybl.apprv
+  receivables: fin.recv
+  accounts receivable: fin.recv
+  invoice: fin.recv
+  payroll: fin.payrl
+  payroll reminder: fin.payrl
+  finance report: fin.report
+  financial report: fin.report
+  fee: fin.fee
+  fees: fin.fee
+  legal fee: fin.fee
+  retainer: fin.fee.retain
+  retainers: fin.fee.retain
+  refund: fin.fee.refund
+  fee refund: fin.fee.refund
+  appointment refund: fin.fee.refund
+
+  # Legal practice
+  bankruptcy: lg.bk
+  chapter 7: lg.bk
+  chapter 13: lg.bk
+  debt settlement: lg.debt
+  debt defense: lg.debt
+  consumer debt: lg.debt
+  consumer debt defense: lg.debt
+  landlord tenant: lg.lt
+  landlord-tenant: lg.lt
+  eviction: lg.lt
+  court: lg.court
+  court filing: lg.court.file
+  filing: lg.court.file
+  e-filing: lg.court.efil
+  efiling: lg.court.efil
+  e-file: lg.court.efil
+  e-filing rejection: lg.court.efil.reject
+  efiling rejection: lg.court.efil.reject
+  filing rejection: lg.court.efil.reject
+  hearing: lg.court.hear
+  hearings: lg.court.hear
+  deadline: lg.deadln
+  deadlines: lg.deadln
+  legal deadline: lg.deadln
+  document request: lg.docreq
+  document requests: lg.docreq
+
+  # Research and reporting
+  legal research: rs.legal
+  case research: rs.case
+  research: rs.legal
+  reporting: dt
   dashboard: dt.dash
-  intake config: pr.voice.intake~cfg
-  pennsylvania intake rules: pr.voice.intake~st.pa
+  dashboards: dt.dash
+  kpi: dt.kpi
+  kpis: dt.kpi
+
+  # Unclassed topics, and a few facet examples
+  ad hoc: x
+  unclassed: x
+  new topic: x
+  pennsylvania bankruptcy: "lg.bk~st.pa"
+  calendar outage: "sys.cal~err"
+  codebook note: "org.codebk~doc"
