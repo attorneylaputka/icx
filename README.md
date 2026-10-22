@@ -56,14 +56,39 @@ ICX is about precision and routing, not compression. Word segments cost about th
 
 | Path | What |
 |---|---|
-| `examples/codebook.yaml` | Example codebook: classes, codes, facets, tombstones |
-| `examples/index.yaml` | Example relative index |
+| `examples/codebook.yaml` | Firm codebook: classes, codes, facets, tombstones |
+| `examples/index.yaml` | Firm relative index: plain-English term to code |
 | `tools/icx_validate.py` | Validator: segment rules, depth, parent prefixes, facets, tombstones, index targets |
 
 ```bash
 pip install pyyaml
 python3 tools/icx_validate.py examples/codebook.yaml examples/index.yaml
 ```
+
+## This fork (Laputka Law Office)
+
+The files in `examples/` are the firm's book. The ten class codes are unchanged. The generic sample that shipped upstream was not a live firm codebook, so those sample codes are replaced here rather than tombstoned.
+
+**Editor.** ICOM (`ICOM`) owns edits to the codebook and the index.
+**Approver.** Maria G (`MARIAG`), chief of staff, approves changes. She is the only assistant who speaks with the attorney.
+
+An owner id on a code is a routing address: uppercase, and six characters or fewer. Topic segments stay lowercase.
+
+| Id | Who |
+|---|---|
+| MARIAG | Maria G, chief of staff, codebook approver |
+| JEN | Jen, calendar and email |
+| GAUNT | Gauntlet, accuracy and completeness review |
+| POLL | Inbox Puller, attorney Outlook inbox |
+| ICOM | Internal router and codebook editor |
+| CTO | Technology |
+| TEAMS | Microsoft Teams |
+| CFO | Finance lead |
+| CLAP, CILL, CCLR, CWAT, CMON, CPRE, CBIG, CFUN, CWES | Comptrollers, one per company, reporting to CFO. The company name stays out of the code. |
+| TRAV | Travel lead |
+| FLT, HTL, CAR, REST, TRV | Flight, hotel, rental car, restaurant, travel review |
+
+Clients, matters, and companies stay in their own message fields. Exact values (dates, amounts, phone numbers, IDs) stay `key=value`. A topic that has no code yet is sent as `x.<word>` until ICOM files it and Maria G approves. No payment moves without attorney approval (`fin.paybl.apprv`), which Maria G carries.
 
 ## Credits
 

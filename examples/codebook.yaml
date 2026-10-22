@@ -1,43 +1,134 @@
-# Example ICX codebook for a generic agent fleet. Replace owners and codes with your own.
+# Laputka Law Office ICX codebook.
+#
+# Editor: ICOM owns edits to this file and to examples/index.yaml.
+# Approver: MARIAG (Maria G, chief of staff) approves changes. She is the
+# only assistant who speaks with the attorney.
+#
+# A code never carries a client, a matter, a company name, or an exact value
+# (a date, an amount, a phone number, an ID). Those stay in other message fields.
+# A topic with no code yet is sent as x.<word>; ICOM files it on the next review.
+#
+# Finance segments stay neutral. The message company field selects the
+# comptroller. Comptroller ids under org.agent.cfo are owner addresses only.
+#
+# Owner ids are uppercase, 6 characters or fewer. The owner of the longest
+# matching prefix receives a message unless it is addressed to someone else.
+# No code has been retired yet. A retired code is a tombstone and is never reused.
 icx:
   version: 1.0.0
   classes:
-    - {code: org, name: "fleet, agents, rules, protocol", owner: chief-of-staff}
-    - {code: pr,  name: client products, owner: product-lead}
-    - {code: sys, name: infrastructure and platforms, owner: platform}
-    - {code: ops, name: process and delivery, owner: operations}
-    - {code: mk,  name: marketing and growth, owner: marketing}
-    - {code: fin, name: money, owner: operations}
-    - {code: lg,  name: legal and compliance, owner: chief-of-staff}
-    - {code: rs,  name: research and intel, owner: engineering}
-    - {code: dt,  name: data and reporting, owner: engineering}
-    - {code: x,   name: "unclassed, reclassify within 7 days", owner: editor}
+    - {code: org, name: "assistants, rules, protocol", owner: MARIAG}
+    - {code: pr,  name: "client services", owner: MARIAG}
+    - {code: sys, name: "systems and platforms", owner: CTO}
+    - {code: ops, name: "process and delivery", owner: ICOM}
+    - {code: mk,  name: "marketing", owner: MARIAG}
+    - {code: fin, name: "finance", owner: CFO}
+    - {code: lg,  name: "legal practice and compliance", owner: MARIAG}
+    - {code: rs,  name: "research", owner: MARIAG}
+    - {code: dt,  name: "data and reporting", owner: CTO}
+    - {code: x,   name: "unclassed; send as x.<word> and reclassify within 7 days", owner: ICOM}
   codes:
-    - {code: org.proto, name: communication protocol}
-    - {code: org.rule, name: standing rules}
-    - {code: org.agent, name: agent roster}
-    - {code: pr.voice, name: AI voice}
-    - {code: pr.voice.intake, name: inbound intake}
-    - {code: pr.voice.book, name: appointment booking}
-    - {code: pr.voice.out, name: outbound calling}
-    - {code: pr.voice.recap, name: post-call summary}
-    - {code: pr.sms, name: texting}
-    - {code: pr.web, name: websites}
-    - {code: sys.wkr, name: serverless workers}
-    - {code: sys.db, name: databases}
-    - {code: sys.crm, name: CRM platform}
-    - {code: sys.alert, name: monitoring and alerts}
-    - {code: ops.deploy, name: deploys and releases}
-    - {code: ops.qc, name: QC and verification}
-    - {code: ops.ticket, name: ticket tracking}
-    - {code: mk.cont, name: content}
-    - {code: mk.out, name: outbound prospecting}
-    - {code: fin.inv, name: invoicing}
-    - {code: fin.spend, name: vendor and model spend}
-    - {code: lg.tcpa, name: contact-time rules}
-    - {code: rs.eval, name: tool and model evaluations}
-    - {code: dt.kpi, name: KPIs}
-    - {code: dt.dash, name: dashboards}
+    - {code: org.proto, name: "communication protocol", owner: ICOM}
+    - {code: org.rule, name: "standing rules", owner: MARIAG}
+    - {code: org.rule.apprv, name: "no payment without attorney approval", owner: MARIAG}
+    - {code: org.agent, name: "assistant roster", owner: MARIAG}
+    - {code: org.agent.mariag, name: "Maria G, chief of staff, codebook approver", owner: MARIAG}
+    - {code: org.agent.jen, name: "Jen, calendar and email", owner: JEN}
+    - {code: org.agent.gaunt, name: "Gauntlet, accuracy and completeness review", owner: GAUNT}
+    - {code: org.agent.poll, name: "Inbox Puller, attorney Outlook inbox", owner: POLL}
+    - {code: org.agent.icom, name: "ICOM, router and codebook editor", owner: ICOM}
+    - {code: org.agent.cto, name: "CTO Bot, technology", owner: CTO}
+    - {code: org.agent.teams, name: "Teams Bot", owner: TEAMS}
+    - {code: org.agent.cfo, name: "CFO Bot, finance lead", owner: CFO}
+    # Comptrollers report to CFO. One id per company the attorney owns.
+    # The company name is not written here; it stays in the message company field.
+    - {code: org.agent.cfo.clap, name: "comptroller CLAP", owner: CLAP}
+    - {code: org.agent.cfo.cill, name: "comptroller CILL", owner: CILL}
+    - {code: org.agent.cfo.cclr, name: "comptroller CCLR", owner: CCLR}
+    - {code: org.agent.cfo.cwat, name: "comptroller CWAT", owner: CWAT}
+    - {code: org.agent.cfo.cmon, name: "comptroller CMON", owner: CMON}
+    - {code: org.agent.cfo.cpre, name: "comptroller CPRE", owner: CPRE}
+    - {code: org.agent.cfo.cbig, name: "comptroller CBIG", owner: CBIG}
+    - {code: org.agent.cfo.cfun, name: "comptroller CFUN", owner: CFUN}
+    - {code: org.agent.cfo.cwes, name: "comptroller CWES", owner: CWES}
+    - {code: org.agent.trav, name: "Travel Agent Bot", owner: TRAV}
+    - {code: org.agent.trav.flt, name: "Flight", owner: FLT}
+    - {code: org.agent.trav.htl, name: "Hotel", owner: HTL}
+    - {code: org.agent.trav.car, name: "Rental car", owner: CAR}
+    - {code: org.agent.trav.rest, name: "Restaurant", owner: REST}
+    - {code: org.agent.trav.trv, name: "Travel review", owner: TRV}
+    - {code: org.codebk, name: "codebook (editor ICOM, approver MARIAG)", owner: ICOM}
+
+    - {code: pr.intake, name: "client intake", owner: MARIAG}
+    - {code: pr.cnslt, name: "consultations", owner: MARIAG}
+    - {code: pr.appt, name: "appointments", owner: JEN}
+    - {code: pr.appt.book, name: "appointment booking", owner: JEN}
+    - {code: pr.appt.rebook, name: "appointment reschedule", owner: JEN}
+    - {code: pr.appt.cancel, name: "appointment cancellation", owner: JEN}
+
+    - {code: sys.crm, name: "Cogent CRM (GoHighLevel)", owner: CTO}
+    - {code: sys.crm.lead, name: "CRM leads", owner: MARIAG}
+    - {code: sys.crm.sms, name: "CRM texting", owner: MARIAG}
+    - {code: sys.crm.remind, name: "CRM reminders", owner: MARIAG}
+    - {code: sys.crm.report, name: "CRM reporting", owner: MARIAG}
+    - {code: sys.mail, name: "email", owner: JEN}
+    - {code: sys.mail.inbox, name: "inbox read", owner: POLL}
+    - {code: sys.mail.triage, name: "email triage", owner: POLL}
+    - {code: sys.mail.draft, name: "email drafting", owner: JEN}
+    - {code: sys.cal, name: "calendar", owner: JEN}
+    - {code: sys.cal.sched, name: "scheduling", owner: JEN}
+    - {code: sys.teams, name: "Microsoft Teams", owner: TEAMS}
+    - {code: sys.teams.ask, name: "Teams questions and replies", owner: TEAMS}
+    - {code: sys.it, name: "IT support", owner: CTO}
+    - {code: sys.it.access, name: "accounts and access", owner: CTO}
+    - {code: sys.docket, name: "Iron Docket", owner: CTO}
+
+    - {code: ops.ticket, name: "task tickets (Iron Docket)", owner: ICOM}
+    - {code: ops.ticket.new, name: "ticket created", owner: ICOM}
+    - {code: ops.ticket.due, name: "ticket due", owner: ICOM}
+    - {code: ops.ticket.block, name: "ticket blocked", owner: ICOM}
+    - {code: ops.ticket.review, name: "ticket in review", owner: GAUNT}
+    - {code: ops.ticket.done, name: "ticket done", owner: ICOM}
+    - {code: ops.qc, name: "accuracy and completeness review", owner: GAUNT}
+    - {code: ops.trav, name: "travel", owner: TRAV}
+    - {code: ops.trav.flt, name: "flights", owner: FLT}
+    - {code: ops.trav.htl, name: "hotels", owner: HTL}
+    - {code: ops.trav.car, name: "rental cars", owner: CAR}
+    - {code: ops.trav.rest, name: "restaurants", owner: REST}
+    - {code: ops.trav.revw, name: "travel review", owner: TRV}
+
+    - {code: mk.cont, name: "content", owner: MARIAG}
+    - {code: mk.camp, name: "campaigns", owner: MARIAG}
+
+    # Outbound payments (payables and refunds) wait on fin.paybl.apprv.
+    # MARIAG carries that approval to the attorney. Payroll codes are reminders only.
+    - {code: fin.book, name: "bookkeeping", owner: CFO}
+    - {code: fin.paybl, name: "payables", owner: CFO}
+    - {code: fin.paybl.apprv, name: "attorney approval before payment", owner: MARIAG}
+    - {code: fin.recv, name: "receivables", owner: CFO}
+    - {code: fin.payrl, name: "payroll reminders", owner: CFO}
+    - {code: fin.report, name: "finance reports", owner: CFO}
+    - {code: fin.fee, name: "retainers and fees", owner: CFO}
+    - {code: fin.fee.retain, name: "retainers", owner: CFO}
+    - {code: fin.fee.refund, name: "fee and appointment refunds", owner: CFO}
+
+    - {code: lg.bk, name: "bankruptcy", owner: MARIAG}
+    - {code: lg.debt, name: "debt settlement and consumer debt defense", owner: MARIAG}
+    - {code: lg.lt, name: "landlord-tenant", owner: MARIAG}
+    - {code: lg.court, name: "court", owner: MARIAG}
+    - {code: lg.court.file, name: "court filings", owner: MARIAG}
+    - {code: lg.court.efil, name: "e-filing", owner: MARIAG}
+    - {code: lg.court.efil.reject, name: "e-filing rejections", owner: MARIAG}
+    - {code: lg.court.hear, name: "hearings", owner: MARIAG}
+    - {code: lg.deadln, name: "deadlines", owner: MARIAG}
+    - {code: lg.docreq, name: "document requests", owner: MARIAG}
+
+    - {code: rs.legal, name: "legal research", owner: MARIAG}
+    - {code: rs.case, name: "case research", owner: MARIAG}
+
+    - {code: dt.dash, name: "dashboards", owner: CTO}
+    - {code: dt.kpi, name: "KPIs", owner: MARIAG}
+
   facets:
     - {code: cfg, name: config}
     - {code: err, name: incident or bug}
@@ -47,5 +138,5 @@ icx:
     - {code: plan, name: plan or design}
     - {code: st.*, name: "US state jurisdiction, e.g. st.pa"}
     - {code: v.*, name: "version, e.g. v.2"}
-  tombstones:
-    - {old: pr.voice.recv, new: pr.voice.intake}
+  # Tombstones: {old: retired.code, new: replacement.code}. Never reuse old.
+  tombstones: []
